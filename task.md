@@ -1,0 +1,42 @@
+# Tasks
+
+- `[x]` **Phase 1 — Project Setup & Database Foundation**
+  - `[x]` Update `core/config.py` with environment variables
+  - `[x]` Set up `core/database.py` with async SQLAlchemy engine
+  - `[x]` Create SQLAlchemy models (Product, Cart, Order, Reservation, Payment)
+  - `[x]` Configure Alembic migrations (`alembic.ini`, `env.py`)
+  - `[x]` Setup `main.py` with health endpoint and CORS
+- `[x]` **Phase 2 — Product Management (CRUD)**
+  - `[x]` Create Pydantic schemas in `schemas/product.py`
+  - `[x]` Implement `repositories/product_repository.py`
+  - `[x]` Implement `services/product_service.py`
+  - `[x]` Add endpoints in `api/routes/products.py`
+  - `[x]` Write and pass `tests/test_products.py`
+- `[x]` **Phase 3 — Cart Management**
+  - `[x]` Create Pydantic schemas in `schemas/cart.py`
+  - `[x]` Implement `services/cart_service.py`
+  - `[x]` Add endpoints in `api/routes/carts.py`
+  - `[x]` Write and pass `tests/test_cart.py`
+- `[x]` **Phase 4 — Checkout & Concurrency-Safe Stock Reservation**
+  - `[x]` Implement `utils/state_machine.py` for valid order transitions
+  - `[x]` Implement `utils/idempotency.py` to prevent duplicate checkouts
+  - `[x]` Implement checkout and reservation logic inside DB transactions (`order_service.py`, `reservation_service.py`)
+  - `[x]` Add checkout route in `api/routes/carts.py`
+  - `[x]` Add order listing and cancellation in `api/routes/orders.py`
+  - `[x]` Write and pass `tests/test_checkout.py` and `tests/test_concurrency.py`
+- `[x]` **Phase 5 — Mock Payment Gateway & Full Order Lifecycle**
+  - `[x]` Create Pydantic schemas in `schemas/payment.py`
+  - `[x]` Implement payment outcome logic in `services/payment_service.py`
+  - `[x]` Add payment endpoints in `api/routes/payments.py`
+  - `[x]` Write and pass `tests/test_payments.py`, `tests/test_orders.py`, `tests/test_reservations.py`
+- `[x]` **Phase 6 — Automated Test Suite**
+  - `[x]` Setup test infrastructure in `tests/conftest.py`
+  - `[x]` Verify full test matrix passes successfully
+- `[x]` **Phase 7 — React Frontend**
+  - `[x]` Create TypeScript interfaces in `frontend/src/types/index.ts`
+  - `[x]` Set up Axios API client in `frontend/src/services/api.ts`
+  - `[x]` Create React hooks (`useProducts.ts`, `useCart.ts`, `useOrder.ts`)
+  - `[x]` Build core components (`ProductCard`, `CartItem`, `OrderStatusBadge`, `ReservationTimer`, `PaymentSimulator`)
+  - `[x]` Build Pages (`ProductsPage`, `CartPage`, `CheckoutPage`, `PaymentPage`, `OrdersPage`, `OrderDetailPage`)
+  - `[x]` Configure React Router in `App.tsx`
+
